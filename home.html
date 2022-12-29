@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">    
+<style>
+  #cbtn{
+    position: absolute;
+    margin-right: auto;
+    margin-left: auto;
+    left: 41%;
+    top: 520px;
+    height: 80px;
+    width: 250px;
+    
+  }
+</style>
+  </head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+    <a href="#" class="navbar-brand"><img src="https://cdn.glitch.global/6b122974-3f9e-4f87-ab57-a8ff9ae70172/Sans%20titre%20(10).png?v=1671836510470" style="height: 60px; padding-top: 0px;"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon">
+        
+      </span>
+    </button>
+    <div class="collapse navbar-collapse  " id="navbarNavDropdown" style="justify-content:flex-end; padding-right:2%; ">
+      <ul class="navbar-nav " style="font-size: 20px;">
+        <li class="nav-item active ">
+          <a class="nav-link" href="home.html" >Home </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="courses.html">Courses</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="About.html">About</a>
+        </li>
+       
+      </ul>
+    </div>
+  </nav>
+      <button id="cbtn" class="btn btn-outline-dark rounded-pill mx-auto  " onclick="cousesLOC()">Courses list</button>
+      <div class=" text-center ">
+        <img src="https://cdn.glitch.global/6b122974-3f9e-4f87-ab57-a8ff9ae70172/SOCIAL%20MEDIA%20MARKETING%20(2).gif?v=1671835729192" class=" col-md-12 image-responsive">
+        <div class="courses col-9 d-flex flex-wrap justify-content-around   mx-auto" >
+          
+      </div>
+      
+        <button class="btn btn-outline-dark rounded-pill mx-auto " id="btn" onclick="cousesLOC()">All courses</button>
+      </div>
+      <footer class="bg-light text-center text-lg-start bottom mt-5">
+  
+        <div class="text-center p-3" style="background-color: white">
+          © (2022-2023) Copyright:
+          <a class="text-dark" href="home.html">CHALABI Hossam</a>
+        </div>
+      </footer>
+      <script src="courses.js"></script>
+      <script>
+          var content = document.querySelector('.courses');
+  
+  function creationCours(path, title, price) {
+    let div = document.createElement('div');
+    div.setAttribute('class', 'card col-3 me-4 mb-3 mydiv');
+    //me:espace des cotés et mb:espace top et bottom
+    let img = document.createElement('img'),
+        p = document.createElement('p'),
+        span = document.createElement('span');
+        div.setAttribute('style', 'text-align: center;');
+    img.src = path;
+    img.setAttribute('class', 'card-img ');
+    img.setAttribute('style', 'height:140px;');
+    let contenu = document.createTextNode(title);
+    p.appendChild(contenu);
+    p.setAttribute('class', 'card-tilte');
+    p.setAttribute('style', 'margin-bottom:30px;');
+    let contenu2 = document.createTextNode(price);
+    span.appendChild(contenu2);
+    span.setAttribute('class', 'card-text ');
+    span.setAttribute('style', 'font-weight: bold; bottom: 2px;');
+    div.appendChild(img);
+    div.appendChild(p);
+    div.appendChild(span);
+    content.append(div)
+}
+  var i;
+  for(i=0;i<3;i++){
+    var r=Math.round(Math.random()*17);
+    creationCours(courses[r].image, courses[r+1].title, courses[r+2].price);
+  }
+  function cousesLOC(){
+    window.location.href='courses.html'
+  }
+  </script>     
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+</html>
